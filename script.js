@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
       tasksList.innerHTML = '';
       tasks.forEach((task, index) => {
           const taskElement = document.createElement('li');
+
           const textSpan = document.createElement('span');
           textSpan.textContent = task.description;
+          
           const deleteBtn = document.createElement('button');
 
           deleteBtn.textContent = 'Slett';
