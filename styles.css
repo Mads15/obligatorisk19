@@ -1,7 +1,34 @@
+body {
+  background-color: #282b30;
+  font-family: 'Arial', sans-serif;
+}
+
 #todo-app {
   width: 300px;
-  margin: auto;
+  margin: 50px auto;
   text-align: center;
+}
+
+input[type="text"], button {
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ffc107;
+  color: #333;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e0a800;
 }
 
 #tasks-list {
@@ -10,12 +37,40 @@
 }
 
 #tasks-list li {
+  position: relative;
   margin-top: 10px;
-  background-color: #f4f4f4;
-  padding: 10px;
+  background-color: #fff8c6;
+  padding: 15px 20px;
   border-radius: 5px;
+  box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+  min-height: 100px;
 }
 
-.completed {
+#tasks-list li:hover {
+  transform: scale(1.05);
+}
+
+#tasks-list li button {
+  visibility: hidden;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background-color: #ff6666;
+  color: white;
+}
+
+#tasks-list li:hover button {
+  visibility: visible;
+}
+
+#tasks-list li.completed {
   text-decoration: line-through;
+  opacity: 0.6;
+}
+
+button:focus, input[type="text"]:focus {
+  outline: none;
 }
